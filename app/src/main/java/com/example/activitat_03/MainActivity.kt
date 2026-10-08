@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var card_male: MaterialCardView
     lateinit var card_female: MaterialCardView
 
+    lateinit var
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,8 +25,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-   card_home = findViewById<MaterialCardView>(R.id.seleccio_home)
-   card_dona = findViewById<MaterialCardView>(R.id.seleccio_dona)
+
+
+
+    card_male = findViewById<MaterialCardView>(R.id.select_male)
+    card_female = findViewById<MaterialCardView>(R.id.select_female)
 
 
 
