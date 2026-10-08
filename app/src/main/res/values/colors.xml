@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_app">#0A0E21</color>
     <color name="background_card">#111328</color>
+    <color name="background_card_selected">#A832E9</color>
     <color name="background_button">#4C4F5E</color>
     <color name="background_items_personal">#1D1E33</color>
     <color name="title_text">#8D8E98</color>
