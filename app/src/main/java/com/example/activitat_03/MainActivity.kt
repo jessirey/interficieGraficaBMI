@@ -17,14 +17,20 @@ import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
 
+    private var pesoActual: Int = 30
+    private var edadActual: Int = 20
+    private var alturaActual: Int = 140
     lateinit var card_male: MaterialCardView
     lateinit var card_female: MaterialCardView
 
     lateinit var card_height: TextView
     lateinit var slider_height: Slider
-    lateinit var card_weight: MaterialCardView
-    lateinit var card_age: MaterialCardView
-
+    lateinit var button_add_weight: Button
+    lateinit var button_less_weight: Button
+    lateinit var textWeight: TextView
+    lateinit var button_add_age: Button
+    lateinit var button_less_age: Button
+    lateinit var textAge: TextView
     lateinit var button_calculate: Button
 
 
@@ -49,8 +55,12 @@ class MainActivity : AppCompatActivity() {
         card_female = findViewById(R.id.select_female)
         card_height = findViewById(R.id.height)
         slider_height = findViewById(R.id.slider_height)
-        card_weight = findViewById(R.id.select_weight)
-        card_age= findViewById(R.id.select_age)
+        button_add_weight = findViewById(R.id.button_add_weight)
+        button_less_weight= findViewById(R.id.button_less_weight)
+        textWeight = findViewById(R.id.textWeight)
+        button_add_age = findViewById(R.id.button_add_age)
+        button_less_age = findViewById(R.id.button_less_age)
+        textAge = findViewById(R.id.textAge)
         button_calculate = findViewById(R.id.calculate)
     }
 
@@ -61,13 +71,36 @@ class MainActivity : AppCompatActivity() {
 
         // En el caso del slider, necesito addOnChangeListener
         slider_height.addOnChangeListener { _, f, _ ->
+            alturaActual = f.toInt()
+            card_height.text = "$alturaActual cm"
+        }
 
-            val decimal = DecimalFormat("#.##")
-            val cambioHeight = decimal.format(f)
-            card_height.text = "$cambioHeight cm"
+        button_add_weight.setOnClickListener {
+            pesoActual += 1
+            putWeight()
+        }
+
+        button_less_weight.setOnClickListener {
+            pesoActual = (pesoActual - 1).coerceAtLeast(1)
+            putWeight()
+        }
+
+        button_add_age.setOnClickListener {
+            edadActual += 1
+            putAge()
+        }
+
+        button_less_age.setOnClickListener {
+            edadActual = (edadActual - 1).coerceAtLeast(1)
+            putAge()
+        }
+
+        button_calculate.setOnClickListener {
+            calculatBMI()
+            changeActivity()
         }
     }
-    fun selectGender(card : View?) {
+    private fun selectGender(card : View?) {
         if (card == card_male) {
             card_male.setCardBackgroundColor(ContextCompat.getColor(this, R.color.background_card_selected))
             card_female.setCardBackgroundColor(ContextCompat.getColor(this, R.color.background_card))
@@ -77,7 +110,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun putWeight() {
+        textWeight.text = pesoActual.toString()
+    }
 
+    private fun putAge() {
+        textAge.text =edadActual.toString()
+    }
 
+    private fun calculatBMI() {
+        val bmi = pesoActual/(alturaActual.toDouble()/100 * alturaActual.toDouble()/100)
+
+    }
+
+    private fun changeActivity() {
+
+    }
 }
 

@@ -1,29 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_app"
+    android:padding="16dp"
+    android:layout_margin="1dp"
     tools:context=".MainActivity">
 
 
+    <LinearLayout
+        android:id="@+id/title_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B AMB 0 BMI CALCULATOR"
+            android:textColor="@color/white"
+            android:textSize="20sp">
+
+        </TextView>
+    </LinearLayout>
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/select_male"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/background_card"
         app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="@color/background_card">
+        app:layout_constraintEnd_toStartOf="@id/select_female"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_app">
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
@@ -31,14 +57,14 @@
                 android:layout_height="96dp"
                 android:contentDescription="@string/male_symbol"
                 android:src="@drawable/baseline_male_24"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/male"
-                android:textSize="24sp"
-                android:textColor="@color/title_text"/>
+                android:textColor="@color/title_text"
+                android:textSize="24sp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -47,16 +73,18 @@
         android:id="@+id/select_female"
         android:layout_width="0dp"
         android:layout_height="180dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@color/background_card"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/select_male"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardBackgroundColor="@color/background_card">
+        app:layout_constraintTop_toBottomOf="@id/title_app">
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
@@ -64,14 +92,14 @@
                 android:layout_height="96dp"
                 android:contentDescription="@string/female_symbol"
                 android:src="@drawable/baseline_female"
-                app:tint="@color/white"/>
+                app:tint="@color/white" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
-                android:textSize="24sp"
-                android:textColor="@color/title_text"/>
+                android:textColor="@color/title_text"
+                android:textSize="24sp" />
         </LinearLayout>
 
 
@@ -82,46 +110,44 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/background_items_personal"
         app:cardCornerRadius="16dp"
-        app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/select_male"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardBackgroundColor="@color/background_items_personal">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_female"
+        app:layout_constraintVertical_bias="0.03">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_margin="16dp"
             android:gravity="center"
-            android:layout_margin="16dp">
+            android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/height"
-                    android:layout_weight="0.1"
-                    android:textSize="30sp"
-                    android:textColor="@color/title_text"/>
-                <TextView
-                    android:id="@+id/height"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="160"
-                    android:layout_weight="0.2"
-                    android:textSize="38sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/title_text"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/height"
+                android:textColor="@color/title_text"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="160 cm"
+                android:textColor="@color/title_text"
+                android:textSize="38sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.slider.Slider
                 android:id="@+id/slider_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:stepSize="1"
                 android:valueFrom="30"
                 android:valueTo="200"
                 app:thumbRadius="20dp"
-                app:trackHeight="4dp"/>
+                app:trackHeight="4dp" />
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -132,61 +158,68 @@
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="@color/background_items_personal"
+        app:layout_constraintEnd_toStartOf="@id/select_age"
+        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/select_height"
-        app:layout_constraintEnd_toStartOf="@id/select_age"
-        app:layout_constraintVertical_bias="0.4"
-        app:cardBackgroundColor="@color/background_items_personal">
+        app:layout_constraintVertical_bias="0.6">
 
         <!--  -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/weight"
-                android:textSize="30sp"
-                android:textColor="@color/title_text">
+                android:textColor="@color/title_text"
+                android:textSize="30sp">
+
             </TextView>
 
             <TextView
+                android:id="@+id/textWeight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="230"
                 android:textColor="@color/title_text"
                 android:textSize="38sp"
                 android:textStyle="bold">
+
             </TextView>
 
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/button_add_weight"
+                    style="?attr/materialIconButtonFilledStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    app:icon="@drawable/add_weight"
-                    app:tint="@color/white"
-                    style="?attr/materialIconButtonFilledStyle">
+                    android:backgroundTint="@color/background_button"
+                    app:icon="@drawable/add_weight">
+
                 </Button>
 
                 <Button
                     android:id="@+id/button_less_weight"
+                    style="?attr/materialIconButtonFilledStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/background_button"
                     app:icon="@drawable/less_weight"
-                    app:tint="@color/white"
-                    style="?attr/materialIconButtonFilledStyle">
+                    app:tint="@color/white">
+
                 </Button>
 
             </LinearLayout>
@@ -200,34 +233,35 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="32dp"
+        app:cardBackgroundColor="@color/background_items_personal"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/select_height"
         app:layout_constraintStart_toEndOf="@id/select_weight"
-        app:cardBackgroundColor="@color/background_items_personal">
+        app:layout_constraintTop_toBottomOf="@id/select_height">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/age"
-                android:textSize="30sp"
-                android:textColor="@color/title_text">
+                android:textColor="@color/title_text"
+                android:textSize="30sp">
 
             </TextView>
 
             <TextView
+                android:id="@+id/textAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="89"
+                android:textColor="@color/title_text"
                 android:textSize="38sp"
-                android:textStyle="bold"
-                android:textColor="@color/title_text">
+                android:textStyle="bold">
             </TextView>
 
             <LinearLayout
@@ -235,26 +269,30 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal">
-            <Button
-                android:id="@+id/button_add_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:icon="@drawable/add_age"
-                app:tint="@color/white"
-                style="?attr/materialIconButtonFilledStyle">
-            </Button>
 
-            <Button
-                android:id="@+id/button_less_age"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:icon="@drawable/less_age"
-                app:tint="@color/white"
-                style="?attr/materialIconButtonFilledStyle">
+                <Button
+                    android:id="@+id/button_add_age"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/background_button"
+                    app:icon="@drawable/add_age"
+                    app:tint="@color/white">
 
-            </Button>
+                </Button>
+
+                <Button
+                    android:id="@+id/button_less_age"
+                    style="?attr/materialIconButtonFilledStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/background_button"
+                    app:icon="@drawable/less_age"
+                    app:tint="@color/white">
+
+                </Button>
 
             </LinearLayout>
 
@@ -265,14 +303,14 @@
     <Button
         android:id="@+id/calculate"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="64dp"
+        android:text="@string/calculate"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/select_weight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:text="@string/calculate"
-        android:textSize="30sp">
+        app:layout_constraintStart_toStartOf="parent">
 
     </Button>
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
