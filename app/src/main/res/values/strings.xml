@@ -41,5 +41,9 @@
     <string name="b_amb_0_bmi_calculator" translatable="false">B AMB 0 BMI CALCULATOR</string>
     <string name="bmi_results">BMI Results</string>
     <string name="go_back">Volver atrás</string>
+    <string name="reduce_age">Reduce age</string>
+    <string name="reduce_weight">reduce weight</string>
+    <string name="default_age">30</string>
+    <string name="default_weight">50</string>
 
 </resources>

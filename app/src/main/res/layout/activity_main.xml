@@ -13,7 +13,7 @@
         android:id="@+id/main"
         tools:context=".MainActivity"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:background="@color/background_app"
         android:padding="12dp">
@@ -23,18 +23,17 @@
             android:id="@+id/title_app"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="4dp"
             android:gravity="center"
-            android:text="B AMB 0 BMI CALCULATOR"
+            android:text="@string/b_amb_0_bmi_calculator"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
-
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/select_male"
@@ -191,7 +190,7 @@
                     android:id="@+id/textWeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="230"
+                    android:text="@string/default_weight"
                     android:textColor="@color/white"
                     android:textSize="38sp"
                     android:textStyle="bold">
@@ -212,6 +211,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="@color/background_button"
+                        android:contentDescription="@string/add_weight"
                         app:icon="@drawable/add_weight">
 
                     </Button>
@@ -223,6 +223,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="@color/background_button"
+                        android:contentDescription="@string/reduce_weight"
                         app:icon="@drawable/less_weight"
                         app:tint="@color/white">
 
@@ -264,7 +265,7 @@
                     android:id="@+id/textAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="89"
+                    android:text="@string/default_age"
                     android:textColor="@color/white"
                     android:textSize="38sp"
                     android:textStyle="bold">
@@ -283,6 +284,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="@color/background_button"
+                        android:contentDescription="@string/add_age"
                         app:icon="@drawable/add_age"
                         app:tint="@color/white">
 
@@ -295,8 +297,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
                         android:backgroundTint="@color/background_button"
+                        android:contentDescription="@string/reduce_age"
                         app:icon="@drawable/less_age"
-                        app:tint="@color/white">
+                        app:tint="@color/white"
+                        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck">
 
                     </Button>
 
@@ -311,11 +315,13 @@
             android:layout_width="0dp"
             android:layout_height="80dp"
             android:text="@string/calculate"
+            android:textColor="#E1BEE7"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/select_weight">
+            app:layout_constraintTop_toBottomOf="@id/select_weight"
+            tools:ignore="VisualLintButtonSize">
 
         </Button>
 
