@@ -1,12 +1,44 @@
 <resources>
     <string name="app_name">Activitat-03</string>
-    <string name="add_weight">add_weight</string>
     <string name="male_symbol">male_symbol</string>
     <string name="male">MALE</string>
     <string name="female">FEMALE</string>
-    <string name="height">HEIGHT</string>
-    <string name="calculate">CALCULATE</string>
     <string name="female_symbol">female_symbol</string>
+    <string name="height">HEIGHT</string>
     <string name="weight">WEIGHT</string>
+    <string name="add_weight">add_weight</string>
+    <string name="less_weight">less_weight</string>
     <string name="age">AGE</string>
+    <string name="add_age">add_age</string>
+    <string name="less_age">less_age</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="re_calculate">RE-CALCULATE</string>
+
+    <string name="height_cm">%1$d cm</string>
+    <string name="bmi_value">%1$.1f</string>
+
+    <!-- Resultados de MainActivity2 mejor ponerlos aquí y que sse llame el textResult -->
+    <string name="error">Error. Introduce datos válidos</string>
+
+    <string name="title_bajo_peso">Bajo peso</string>
+    <string name="description_bajo_peso">Tu IMC está por debajo del rango de referencia para adultos. Un profesional sanitario puede ayudarte a valorar tu situación y tus necesidades de salud.</string>
+
+    <string name="title_peso_normal">Normal</string>
+    <string name="description_peso_normal">Tu IMC está dentro del rango de referencia para adultos. Recuerda que el IMC es un indicador orientativo y no determina por sí solo tu estado de salud.</string>
+
+    <string name="title_sobrepeso">Sobrepeso</string>
+    <string name="description_sobrepeso">Tu IMC está en el rango de sobrepeso para adultos. Un profesional sanitario puede orientarte teniendo en cuenta tus circunstancias y tu salud general.</string>
+
+    <string name="title_obesidadI">Obesidad clase I</string>
+    <string name="description_obesidadI" translatable="false">Tu IMC está en el rango de obesidad clase I para adultos. Puedes consultar con un profesional sanitario para valorar tu salud y recibir orientación personalizada.</string>
+
+    <string name="title_obesidadII" translatable="false">Obesidad clase II</string>
+    <string name="description_obesidadII" translatable="false">Tu IMC está en el rango de obesidad clase II para adultos. Un profesional sanitario puede ofrecerte una valoración integral y orientación adaptada a tus necesidades.</string>
+
+    <string name="title_obesidadIII" translatable="false">Obesidad clase III (Mórbida)</string>
+    <string name="description_obesidadIII" translatable="false">Tu IMC está en el rango de obesidad clase II para adultos. Un profesional sanitario puede ofrecerte una valoración integral y orientación adaptada a tus necesidades.</string>
+    <string name="your_results" translatable="false">Your results</string>
+    <string name="b_amb_0_bmi_calculator" translatable="false">B AMB 0 BMI CALCULATOR</string>
+    <string name="bmi_results">BMI Results</string>
+
 </resources>

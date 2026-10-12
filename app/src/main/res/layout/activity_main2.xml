@@ -9,78 +9,101 @@
     android:padding="16dp"
     tools:context=".MainActivity2">
 
-    <LinearLayout
+    <TextView
         android:id="@+id/title_app"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
+        android:text="@string/bmi_results"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+    </TextView>
 
+    <ImageButton
+        android:id="@+id/button_back"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Volver atrás"
+        android:src="@drawable/button_back"
+        app:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title_app"
+        app:layout_constraintBottom_toBottomOf="@id/title_app" />
+
+    <LinearLayout
+        android:id="@+id/yourResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_app">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B AMB 0 BMI CALCULATOR"
-            android:textColor="@color/white"
-            android:textSize="20sp">
-
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Your results"
+            android:text="@string/your_results"
             android:textSize="50sp">
         </TextView>
+
     </LinearLayout>
 
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/results"
+        android:id="@+id/cardResults"
         android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="32dp"
         app:cardBackgroundColor="@color/background_items_personal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/yourResults"
+        app:layout_constraintBottom_toTopOf="@id/button_recalculate"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="16dp">
 
             <TextView
+               android:id="@+id/textResult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NORMAL"
-                android:textSize="50sp">
+                android:layout_marginBottom="16dp"
+                tools:text="NORMAL"
+                android:textSize="25sp"
+                android:textStyle="bold">
 
             </TextView>
 
             <TextView
+                android:id="@+id/textBMI"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="22.75"
-                android:textSize="120sp">
+                android:layout_marginBottom="24dp"
+                tools:text="22.75"
+                android:textSize="100sp"
+                android:textColor="@color/white"
+                android:textStyle="bold">
 
             </TextView>
 
             <TextView
+                android:id="@+id/textDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Normal"
-                android:textSize="24sp">
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                tools:text="Normal">
 
             </TextView>
         </LinearLayout>
@@ -89,12 +112,13 @@
 
     <Button
         android:id="@+id/button_recalculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="RE-CALCULATE"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:text="@string/re_calculate"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/results"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="16dp">
 
