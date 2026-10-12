@@ -2,6 +2,7 @@ package com.example.activitat_03
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,7 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var textBMI: TextView
     private lateinit var textDescription : TextView
     private lateinit var buttonRecalculate : Button
-    private lateinit var buttonBack: Button
+    private lateinit var buttonBack: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +28,7 @@ class MainActivity2 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val resultBMI = intent.extras?.getDouble(BMI_RESULT)?: -1.0
+        val resultBMI = intent.getDoubleExtra(BMI_RESULT, -1.0)
         inicializarVariables()
         inicializarResultadoBMI(resultBMI)
         inicializarListener()
@@ -38,7 +39,7 @@ class MainActivity2 : AppCompatActivity() {
         textBMI = findViewById(R.id.textBMI)
         textDescription = findViewById(R.id.textDescription)
         buttonRecalculate = findViewById(R.id.button_recalculate)
-        buttonBack = findViewById(R.id.button_back)
+        buttonBack = findViewById(R.id.buttonBack)
     }
 
     private fun inicializarListener() {

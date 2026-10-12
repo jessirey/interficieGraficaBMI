@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var cardHeight: TextView
     lateinit var sliderHeight: Slider
-    lateinit var buttonAddLWeight: Button
+    lateinit var buttonAddWeight: Button
     lateinit var buttonLessWeight: Button
     lateinit var textWeight: TextView
     lateinit var buttonAddAge: Button
-    lateinit var butttonLessAge: Button
+    lateinit var buttonLessAge: Button
     lateinit var textAge: TextView
     lateinit var buttonCalculate: Button
 
@@ -58,11 +58,11 @@ class MainActivity : AppCompatActivity() {
         cardFemale = findViewById(R.id.select_female)
         cardHeight = findViewById(R.id.height)
         sliderHeight = findViewById(R.id.slider_height)
-        buttonAddLWeight = findViewById(R.id.button_add_weight)
+        buttonAddWeight = findViewById(R.id.button_add_weight)
         buttonLessWeight= findViewById(R.id.button_less_weight)
         textWeight = findViewById(R.id.textWeight)
         buttonAddAge = findViewById(R.id.button_add_age)
-        butttonLessAge = findViewById(R.id.button_less_age)
+        buttonLessAge = findViewById(R.id.button_less_age)
         textAge = findViewById(R.id.textAge)
         buttonCalculate = findViewById(R.id.calculate)
     }
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             cardHeight.text = getString(R.string.height_cm, alturaActual)
         }
 
-        buttonAddLWeight.setOnClickListener {
+        buttonAddWeight.setOnClickListener {
             pesoActual += 1
             putWeight()
         }
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        butttonLessAge.setOnClickListener {
+        buttonLessAge.setOnClickListener {
             edadActual = (edadActual - 1).coerceAtLeast(1)
             putAge()
         }
@@ -133,9 +133,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeActivity(resultBMI: Double) {
 
-        val navigationA2 = Intent(this, MainActivity2::class.java).apply {
-            putExtra(BMI_RESULT, resultBMI)
-        }
+        val navigationA2 = Intent(this, MainActivity2::class.java)
+        navigationA2.putExtra(BMI_RESULT, resultBMI)
         startActivity(navigationA2)
 
     }

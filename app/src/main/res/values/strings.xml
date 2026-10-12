@@ -40,5 +40,6 @@
     <string name="your_results" translatable="false">Your results</string>
     <string name="b_amb_0_bmi_calculator" translatable="false">B AMB 0 BMI CALCULATOR</string>
     <string name="bmi_results">BMI Results</string>
+    <string name="go_back">Volver atrás</string>
 
 </resources>
